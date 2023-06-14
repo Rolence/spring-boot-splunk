@@ -7,7 +7,7 @@ ARG artifact=target/biz-0.0.1-SNAPSHOT.jar
 
 WORKDIR /opt/app
 
-COPY ${artifact} app.jar
+COPY ${artifact} .
 
 # This should not be changed
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-jar","biz-0.0.1-SNAPSHOT.jar"]
