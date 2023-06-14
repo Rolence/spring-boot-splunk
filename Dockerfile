@@ -3,7 +3,7 @@
 FROM openjdk:21-ea-17-jdk
 
 # Simply the artifact path
-ARG artifact=target/spring-boot-web.jar
+ARG artifact=target/biz-0.0.1-SNAPSHOT.jar
 
 WORKDIR /opt/app
 
