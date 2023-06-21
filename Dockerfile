@@ -8,6 +8,6 @@ ARG artifact=target/biz-0.0.1-SNAPSHOT.jar
 WORKDIR /opt/app
 
 COPY ${artifact} .
-
+EXPOSE 8084
 # This should not be changed
 ENTRYPOINT ["java","-jar","biz-0.0.1-SNAPSHOT.jar"]
