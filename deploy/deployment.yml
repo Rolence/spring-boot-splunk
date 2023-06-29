@@ -62,7 +62,7 @@ spec:
     spec:
       containers:
       - name: splunk
-        image: akarolence/spring-splunk:${BUILD_NUMBER}53
+        image: akarolence/spring-splunk:62${BUILD_NUMBER}53
         ports:
         - containerPort: 8084
 
