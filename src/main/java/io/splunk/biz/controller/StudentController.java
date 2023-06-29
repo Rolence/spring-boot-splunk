@@ -41,6 +41,14 @@ public class StudentController {
         return data;
     }
 
+    @GetMapping("/test/{id}")
+    public Student getTestDetailsById(@PathVariable int id) {
+        logger.info("StudentController:getStudentDetailsById fetch order by id {}", id);
+        Student data = service.getStudentById(id);
+        logger.info("StudentController:getStudentDetailsById fetch Student response {}", Mapper.mapToJsonString(data));
+        return data;
+    }
+
 //    public static void main(String[] args) {
 //        SpringApplication.run(SplunkDemoApplication.class, args);
 //    }
