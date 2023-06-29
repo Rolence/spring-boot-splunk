@@ -1,0 +1,30 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: splunk
+spec:
+  selector:
+    app: splunk
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 8084
+    targetPort: 8084
+    # nodePort: 30456
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: web
+spec:
+  selector:
+    app: web
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 4200
+    targetPort: 4200
+    # nodePort: 30457
+
