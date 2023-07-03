@@ -19,6 +19,7 @@ public class StudentService {
             new Student(3, "Peter",25,"Female","English"),
             new Student(4, "Jame",26,"Male","History"),
             new Student(5, "Andrew",24,"Male","Finance"),
+            new Student(0, "Jude",24,"Male","Banking"),
             new Student(6, "Thomas",20,"Female","Computer"));
 
     public List<Student> getStudents() {
