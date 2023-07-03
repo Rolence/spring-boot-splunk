@@ -27,7 +27,7 @@ kind: Deployment
 metadata:
   name: web
 spec:
-  replicas: 3
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -51,7 +51,7 @@ metadata:
   labels:
     app: splunk
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: splunk
