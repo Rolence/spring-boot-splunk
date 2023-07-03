@@ -3,11 +3,16 @@
 FROM openjdk:21-ea-17-jdk
 
 # Simply the artifact path
-ARG artifact=target/biz-0.0.1-SNAPSHOT.jar
+# ARG artifact=target/biz-0.0.1-SNAPSHOT.jar
 
-WORKDIR /opt/app
+# WORKDIR /opt/app
 
-COPY ${artifact} .
+# COPY ${artifact} .
 EXPOSE 8084
 # This should not be changed
-ENTRYPOINT ["java","-jar","biz-0.0.1-SNAPSHOT.jar"]
+# ENTRYPOINT ["java","-jar","biz-0.0.1-SNAPSHOT.jar"]
+
+# FROM maven:3.6.3-jdk-8 AS builder
+COPY src/main/resources/application.properties application.properties
+COPY target/*.jar application.jar
+ENTRYPOINT ["java","-jar","application.jar"]
