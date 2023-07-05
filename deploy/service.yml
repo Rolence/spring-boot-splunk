@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: splunk
-  type: NodePort
+  type: LoadBalancer
   ports:
   - protocol: TCP
     port: 8084
@@ -21,7 +21,7 @@ metadata:
 spec:
   selector:
     app: web
-  type: NodePort
+  type: LoadBalancer
   ports:
   - protocol: TCP
     port: 4200

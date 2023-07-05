@@ -3,6 +3,7 @@ namePrefix: kustomize-
 resources:
 - deployment.yml
 - service.yml
-# - ingress-deploy.yml
+- config-ext.yml
+- ingress-deploy.yml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization

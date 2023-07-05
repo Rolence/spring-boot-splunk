@@ -10,8 +10,9 @@ metadata:
   name: kustomize-nginx-ng4-service
   namespace: default
 spec:
+  ingressClassName: ngrok
   rules:
-    - host: k8s-master.com
+    - host: argocd-server-nKVA5vIK.ngrok.app
     - http:
         paths:
         - path: /app
