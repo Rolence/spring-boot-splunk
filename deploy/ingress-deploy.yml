@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: ngrok
   rules:
-    - host: argocd-server-nKVA5vIK.ngrok.app
+    - host: dme-server.ngrok.app
     - http:
         paths:
           - backend:
