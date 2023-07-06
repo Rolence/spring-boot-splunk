@@ -1,13 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-#  annotations:
-#    ingress.kubernetes.io/rewrite-target: /
-#    kubernetes.io/ingress.class: public
-#    nginx.ingress.kubernetes.io/backend-protocol: HTTP
   labels:
     app.kubernetes.io/instance: splunk
-  name: kustomize-nginx-ng4-service
+  name: kustomize-kustomize-nginx-ng4-service
   namespace: default
 spec:
   ingressClassName: ngrok
@@ -15,18 +11,17 @@ spec:
     - host: argocd-server-nKVA5vIK.ngrok.app
     - http:
         paths:
-        - path: /app
-          backend:
-            service:
-              name: kustomize-splunk
-              port:
-                number: 8084
-          pathType: Prefix
-        - path: /web
-          pathType: Prefix
-          backend:
-            service:
-              name: kustomize-web
-              port:
-                number: 4200
-
+          - backend:
+              service:
+                name: kustomize-splunk
+                port:
+                  number: 8084
+            path: /app
+            pathType: Prefix
+          - backend:
+              service:
+                name: kustomize-web
+                port:
+                  number: 4200
+            path: /web
+            pathType: Prefix
