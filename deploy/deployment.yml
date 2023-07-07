@@ -65,7 +65,29 @@ spec:
         image: akarolence/spring-splunk:78
         ports:
         - containerPort: 8084
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: register-server
+  labels:
+    app:
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: register-server
+  template:
+    metadata:
+      labels:
+        app: register-server
+    spec:
+      containers:
+        - name: register-server
+          image: 10.12.1.75:5000/registry/sportif-eureka-service:5
+          ports:
+            - containerPort: 8001
+#10.12.1.75:5000/registry/sportif-eureka-service:5
 # ---
 # kind: Service
 # apiVersion: v1
