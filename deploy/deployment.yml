@@ -83,7 +83,7 @@ spec:
         app: register-server
     spec:
       imagePullSecrets:
-        - name: kustomize-docker-config
+        - name: kustomize-gog-config
       containers:
         - name: register-server
           image: 10.12.1.75:5000/registry/sportif-eureka-service:5
