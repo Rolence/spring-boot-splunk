@@ -83,7 +83,7 @@ spec:
         app: register-server
     spec:
       imagePullSecrets:
-        - name: kustomize-image-registry-secret
+        - name: kustomize-registry-secret
       containers:
         - name: register-server
           image: dmp.dme.systems:9443/registry/sportif-eureka-service:5
