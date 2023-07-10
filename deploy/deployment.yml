@@ -86,7 +86,7 @@ spec:
         - name: kustomize-gog-config
       containers:
         - name: register-server
-          image: https://dmp.dme.systems:9443/registry/sportif-eureka-service:5
+          image: dmp.dme.systems:9443/registry/sportif-eureka-service:5
           ports:
             - containerPort: 8001
 #10.12.1.75:5000/registry/sportif-eureka-service:5
