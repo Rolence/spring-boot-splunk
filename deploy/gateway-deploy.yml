@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-service
+  labels:
+    app:
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway-service
+  template:
+    metadata:
+      labels:
+        app: gateway-service
+    spec:
+      imagePullSecrets:
+        - name: kustomize-registry-secret
+      containers:
+        - name: gateway-service
+          image: dmp.dme.systems:9443/registry/sportif-gateway-service:2
+          ports:
+            - containerPort: 8010
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: gateway-service
+spec:
+  selector:
+    app: gateway-service
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8010
+      targetPort: 8010
+      # nodePort: 30457
