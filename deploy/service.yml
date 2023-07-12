@@ -27,4 +27,18 @@ spec:
     port: 4200
     targetPort: 4200
     # nodePort: 30457
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: register-server
+spec:
+  selector:
+    app: register-server
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8001
+      targetPort: 8001
+      # nodePort: 30457
 
